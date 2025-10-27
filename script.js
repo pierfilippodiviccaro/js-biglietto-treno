@@ -1,17 +1,19 @@
+
+
+// dichiarazioni di variabili
 const kilometri = prompt("inserisci il kilometraggio")
-let soldi =  Math.floor( 0.21 * parseFloat(kilometri) );
+let soldi = 0.21 * kilometri;
 let eta = prompt("inserisci la tua eta!")
+let sconto = 0;
 
+// logica
 if (eta <= 17){
-  const sconto = Math.floor((soldi*20)/100);
-  console.log(`il costo totale del tuo biglietto è: ${sconto}€`);
-}
+  sconto = (soldi * 20 / 100)
+} 
 else if (eta >= 65) {
-    const scontoOver = Math.floor((soldi*40)/100);
-    console.log(`il costo del biglietto è di ${scontoOver}€`)
+    sconto = (soldi * 40 / 100)
 }
-else{
-    console.log(`il costo del biglietto è ${soldi}€`)
-}
+soldi = soldi - sconto
 
-
+// output
+console.log(`il costo totale del tuo biglietto è: ${soldi}€ con uno sconto di ${sconto}€`);
